@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+    <head>
+        <title>
+            Test
+        </title>
+        <style type="text/css">
+            .normal { color: black; }
+            .gris { color: gray; }
+        </style>
+    </head>
+    <body>
+        <input type="text" id="champ" value="" size="30" />
+        <script type="text/javascript">
+        //<![CDATA[
+            var champ = document.getElementById("champ");
+            var texte = "Texte qui sert d'explication ou d'exemple.";
+            
+            function reset()
+            {
+                champ.value = texte;
+                champ.className = "gris";
+            }
+            reset();
+            
+            champ.onfocus = function()
+            // variante en remplaçant la ligne précédente par : champ.onfocus = champ.onmouseover = function()
+            {
+                if(champ.value == texte)
+                {
+                    champ.value = "";
+                    champ.className = "normal";
+                }
+            }
+            
+            champ.onblur = function()
+            // variante en remplaçant la ligne précédente par : champ.onblur = champ.onmouseout = function()
+            {
+                if(champ.value == "")
+                    reset();
+            }
+        //]]>
+        </script>
+    </body>
+</html>

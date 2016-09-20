@@ -1,0 +1,359 @@
+/**
+@font-face
+{
+  font-family: "Maiandra GD";
+  font-weight: normal;
+  src: url("http://innsbay.toile-libre.org/divers/Maian.TTF") format('truetype');
+}
+
+@font-face
+{
+  font-family: "Maiandra GD";
+  font-weight: bold;
+  src: url("http://innsbay.toile-libre.org/divers/Maiandb.TTF") format('truetype');
+}
+
+@font-face
+{
+  font-family: "FairyDustB";
+  src: url("http://innsbay.toile-libre.org/divers/FairyDustB.ttf") format('truetype');
+}
+/**/
+
+#menu li:hover, #menu li:focus, #div_titre h1 a
+{
+    -webkit-transition-property: background-color, border-color, text-shadow;
+    -webkit-transition-duration: 0.2s;
+    -o-transition-property: background-color, border-color, text-shadow;
+    -o-transition-duration: 0.2s;
+	-moz-transition-property: background-color, border-color, text-shadow;
+    -moz-transition-duration: 0.2s;
+	transition-property: background-color, border-color, text-shadow;
+    transition-duration: 0.2s;
+}
+
+html { font-size: 100%; }
+
+body
+{
+    margin: 0;
+    font-family: Verdana, sans serif;
+    /* font-size: 12px; */
+    font-size: 0.75em;
+    background-color: #111;
+	overflow-y: scroll;
+}
+
+strong { font-weight: bold; }
+.titre { font-style: italic; }
+
+a {text-decoration: none;}
+a:hover, a:active, a:focus {text-decoration: underline;}
+/* a img {border: none;} */
+
+img
+{
+    border: 1px solid #666;
+}
+
+fieldset
+{
+    padding: 0.75em;
+    /* border-color: gray; */
+    border-color: #BBB;
+}
+
+.center
+{
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+}
+.center img
+{
+    display:inline;
+    max-width: 90%;
+}
+
+p.main
+{
+    padding-top: 20px;
+}
+
+#conteneur
+{
+    max-width: 800px;
+    margin: 25px auto;
+    background-color: #CCC;
+	border-radius: 10px;
+}
+
+#div_titre
+{
+    height: 130px;
+    background: url(image800x130.jpg);
+    position: relative;
+	border-radius: 10px 10px 0 0;
+    display:block;
+}
+
+#div_titre h1
+{
+    font-variant: small-caps;
+    text-align: center;
+    color: white;
+    font-size: 4em;
+    border-bottom: 1px solid white;
+    padding-top: 0.5em; /* 24px */
+    max-width: 9em;
+    margin: auto;
+}
+
+#div_titre h1 a
+{
+    font-family: Georgia, Garamond, "Bitstream Vera Serif", serif;
+    color: white;
+    text-decoration: none;
+    text-shadow: 0 0 10px white;
+}
+#div_titre h1 a:hover
+{
+    text-shadow: none;
+}
+
+#menu li
+{
+    color: white;
+    list-style: none;
+    float: left;
+    background-color:#333;
+    height: 3.5em;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+}
+
+#menu li a
+{
+    font-weight: bold;
+    float: left;
+    font-size: 1.1em;
+    color: inherit;
+    padding: 1em;
+}
+
+#menu li a:visited { color: inherit; }
+
+#menu li:hover, #menu li.selected
+{
+    color: black;
+    background-color: #EEE;
+    border-left: 1px solid #CCC;
+    border-right: 1px solid #CCC;
+	border-radius: 7px 7px 0 0;
+    -moz-border-radius: 7px 7px 0 0;
+}
+
+#menu li a:hover
+{
+    text-decoration: none;
+}
+#menu li a:active
+{
+    color: white;
+    /* background-color: black; */
+    background: url(image2r_bg.jpg) center -77px;
+}
+
+#menu
+{
+    padding: 0;
+    margin: 0;
+}
+
+#div_menu
+{
+    background-color:#333;
+    /* height: 3.7em;            (2×1,3)+1,1≠3,7 ?    */
+    height: 3.5em;
+}
+
+#date
+{
+    text-transform: lowercase;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: .5em;
+    font-style: italic;
+    font-family: serif;
+    color: #DDD;
+    text-shadow: 2px 2px 2px black;
+}
+
+#imdb
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: .5em;
+}
+#imdb img
+{
+	border: none;
+}
+#imdb img:hover
+{
+	box-shadow: 0px 0px 20px black;
+}
+
+section h1 
+{
+    text-align: center;
+    margin-top: 0;
+    display:none;
+}
+
+#div_contenu
+{
+    padding: 20px;
+    clear: both;
+}
+
+#div_contenu li { margin-top:4px }
+
+li {	list-style-type: circle; }
+
+blockquote {	font-style: italic; }
+
+#fmail { margin: 10px 0; }
+#fmail label { font-style: italic; }
+
+/* Informations diverses () */
+
+.roleA { 
+    list-style-type: none;
+    font-style: italic; }
+
+dl {
+    padding-left: 40px;
+    margin-top: 0.4em;
+}
+
+dt {
+    display: list-item;
+    float: left;
+    margin-right: 0.45em;
+}
+dt.role {
+    list-style-type: circle;
+    font-weight: bold;
+}
+dd {
+    margin-left: 0;
+    margin-bottom: 4px;
+}
+
+dl.acteurs { padding-left: 2em; }
+
+.statut
+{
+    font-weight: bold;
+    background-color: #DDD;
+    font-weight: bold;
+    padding: 15px;
+    width: 70%;
+    margin: 10px auto;
+}
+    
+.statut.ok { color: green; }
+.statut.err { color: red; }
+
+#D { color: #111; }
+#D:hover { color: #999; }
+
+#twitterlink
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
+
+#twitterlink img { border: none;}
+
+input { cursor: auto; }
+
+.avenir
+{
+    font-weight: bold;
+    color: red;
+    display: block;
+}
+.nouveau
+{
+    font-weight: bold;
+    color: red;
+}
+
+.info
+{
+    font-weight: bold;
+}
+
+#news
+{
+    background-color: white;
+    border: 2px solid #DDD;
+    padding: 10px;
+    text-align: center;
+}
+
+.pcontact
+{
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.small
+{
+	font-size:x-small;
+	margin-right: 5em;
+	margin-left: 2em;
+	text-align:justify;
+}
+/* Comment le voir */
+#ulProjs
+{
+	padding: 1em;
+}
+
+#ulProjs li
+{
+	border-color: #F0F0F0;
+    border-style: solid;
+    border-width: 0 0 1px 4px;
+    list-style-type: none;
+    padding: 0.7em;
+	margin: 0;
+}
+#ulProjs li.first
+{
+	border-top-width: 1px;
+}
+
+#ulProjs .nonProjs li
+{
+	border: none;
+	list-style-type: circle;
+	margin-top: .5em;
+	padding:0;
+}
+
+.date
+{
+    /* font-family: Georgia, serif; */
+    font-size: 9pt;
+    font-weight: bold;
+	color: #002900;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sprace [Ludum Dare 23]</title>
+		<meta charset="utf-8" />
+		<style type="text/css">
+		
+		body
+		{
+			background: #111;
+		}
+		
+		#zoneCanvas
+		{
+			position: relative;
+			height: 450px;
+			margin:auto;
+			width: 800px;
+			margin-top:50px;
+		}
+		
+		#zoneCanvas div, #zoneCanvas canvas
+		{
+			position: absolute;
+			top: 0;
+			left: 0;
+			border: 1px solid gray;
+			width: 800px;
+			height: 450px;
+			margin: 0;
+			text-align: center;
+			/*padding: auto;*/
+		}
+		#log
+		{
+			overflow: auto;
+			height: 100px;
+			width: 400px;
+			float: right;
+			display: none;
+		}
+		#assets
+		{
+			float:right;
+			visibility: hidden;
+		}
+		
+		#boutons
+		{
+			text-align: center;
+			margin-top: 20px;
+			/*display: none;*/
+		}
+		#bReset
+		{
+			display: none;
+		}
+		.instructions
+		{
+			color: #FFF;
+			font-family: serif;
+		}
+		</style>
+		<script src="jquery.min.js" type="text/javascript"></script>
+		<script src="ld23.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<!--<h1>Test Canvas HTML5</h1>-->
+		<pre id="log"></pre>
+		<div id="zoneCanvas">
+	    	<div class="instructions">
+				<p>
+					Do not let anyone (including you) go through the right edge, and try not to fall through the left edge.
+				</p>
+				<p>
+					Press the Right key to start the game.
+				</p>
+			</div>
+			<canvas id="canvasBg" width="800" height="450"></canvas>
+		    <canvas id="canvasMain" width="800" height="450"></canvas>
+			<canvas id="canvasOverlay"  width="800" height="450"></canvas>
+		</div>
+		<div id="assets">
+			<audio id="audioPlop1" src="audio/plop1.wav" />
+			<audio id="audioPlop2" src="audio/plop2.wav" />
+			<img src="img/animSpzBase.png" />
+			<img src="img/animSpzBaseDead.png" />
+			<img src="img/animSpzBaseEnnemi.png" />
+			<img src="img/bg2.png" />
+		</div>
+		<div id="boutons">
+			<button id="bReset">Restart game</button>
+		</div>
+		<script type="text/javascript">
+			//main();
+			var started = false;
+			$(document).keydown(function(e)
+			{
+				if (e.keyCode == 39 && !started) {
+				   $(document).ready(main);
+				}
+			});
+			
+			//$("#bLancer").click(main);
+			$("#bReset").click(reset);
+		</script>
+	</body>
+</html>

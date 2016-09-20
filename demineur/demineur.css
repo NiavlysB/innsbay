@@ -1,0 +1,101 @@
+#menu a  {
+  text-decoration: none;
+  font-weight: bold;
+}
+ 
+#menu a:hover {
+  text-decoration:underline;
+}
+ 
+ul#menu li {
+  display:inline;
+  padding:7px;
+}
+ 
+ul#menu:before {
+  content:"\25BA";
+}
+ 
+div#content ul#menu {
+  border-bottom: grey 1px solid;
+  padding:10px;
+  background-color:#DDDDDD;
+  margin:0;
+}
+ 
+#Grille td, #Grille td.fini:active {
+  cursor: default;
+  border: 2px outset #EEEEEE;
+  background-color: #DDDDDD;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+ 
+#Grille {
+  background-color: #DDDDDD;
+  -moz-user-select: none;
+}
+ 
+/* Cases découvertes et pendant le clic */
+#Grille td:active, #Grille .decouvert {
+  background-color: #FCFCFC;
+  width: 22px;
+  height: 22px;
+  border: 1px dotted grey;
+}
+ 
+#Grille td.drapeau {
+  background-color: green;
+  /* background: url('drapeau.png') center no-repeat; */
+}
+ 
+#Grille td.mines {
+        background-color: red;
+  /* background: url('mine.png') center no-repeat; */
+}
+ 
+#Grille td.mines#mine {
+  border: 2px solid red;
+}
+ 
+#Grille td.mines:active {
+  width: 20px;
+  height: 20px;
+}
+ 
+/* Couleurs des chiffres */
+.v1 { color: blue;     }
+.v2 { color: green;    }
+.v3 { color: red;      }
+.v4 { color: darkblue; }
+.v5 { color: darkred;  }
+.v6 { color: cyan;     }
+.v7 { color: violet;   }
+.v8 { color: black;    }
+ 
+ 
+#conteneur {
+  padding: 10px;
+  border: 2px solid grey;
+  background-color: #B6B6B6;
+}
+ 
+#compteurs {
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border: 1px dotted grey;
+  background-color: #DDD;
+  font-weight:bold;
+}
+ 
+#compteurs span {
+  color: red;
+}
+ 
+#empGrille {
+  padding: 15px;
+}

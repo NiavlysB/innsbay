@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'> 
+<html xmlns='http://www.w3.org/1999/xhtml'> 
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<title>Démineur</title>
+<script type="text/javascript" src="demineur.js"></script>
+<link rel="stylesheet" type="text/css" href="demineur.css" media="all" />
+</head> 
+<body>
+<div id="emplacementDemineur" onselectstart="return false;"></div>
+<script type="text/javascript">
+if (document.getElementById('emplacementDemineur'))
+    {
+    document.getElementById('emplacementDemineur').innerHTML = '<ul id="menu"><li><a href="javascript:;" onclick="largeur = 9; hauteur = 9; nbMines = 10; afficherGrille();">Débutant</a></li>&ndash;<li><a href="javascript:;" onclick="largeur = 16; hauteur = 16; nbMines = 40; afficherGrille();">Intermédiaire</a></li>&ndash;<li><a href="javascript:;" onclick="largeur = 30; hauteur = 16; nbMines = 99; afficherGrille();">Expert</a></li>&ndash;<li><a href="javascript:;" onclick="input();">Personnalisé</a></li>&#x2022;&#x2022;&#x2022;<li><a href="javascript:;" onclick="afficherGrille();" title="Recommencer la partie" accesskey="r">Recommencer</a></li></ul><div id="conteneur"><div id="empGrille" align="center"></div><div id="compteurs">Mines restantes : <span id="compteurMines"></span><br />Temps : <span id="chronomètre"></span></div></div>';
+
+    /////////// Démarrage ////////////
+    largeur = 9; hauteur = 9; nbMines = 10; afficherGrille();
+    document.getElementById('empGrille').oncontextmenu = function() { return false; };
+    }
+</script>
+</body>
+</html>

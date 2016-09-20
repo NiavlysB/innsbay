@@ -1,0 +1,81 @@
+<html>
+<!-- coding:utf-8-->
+<head>
+<title>Test géolocalisation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+#geo
+{
+    border: 2px solid red;
+    background: #FFAAAA;
+    padding: 10px;
+    margin: 10px;
+}
+</style>
+</head>
+<body>
+<img src="http://www.lesarchivesduspectacle.net/logoas_V2.png" alt="Les Archives du Spectacle" />
+<div id="contenu">Contenu…</div>
+
+<script type="text/javascript">
+var R = false;
+
+function action(a)
+{
+    //D.innerHTML += a;
+    //alert('MAIS BORDEL DE MERDE !!!');
+    //alert(a.coords.latitude + ', ' + a.coords.longitude);
+    document.getElementById('slot').innerHTML += a.coords.latitude + ', ' + a.coords.longitude;
+}
+
+function debug(b)
+{
+   a = '';
+   for (i in b)
+        a+=i+' => '+b[i]+'\n';
+    document.getElementById('slot').innerHTML += a;
+}
+
+function obtenirLoc(r)
+{
+    navigator.geolocation.getCurrentPosition(action, debug, true);
+    if (R)
+    {
+        setInterval("obtenirLoc()", 30000);
+        // TODO: Étudier plutôt la solution native « watch »
+        r = false;
+    }
+    return false;
+} 
+
+// (c) copyright 2005 modernmethod, inc
+function sajax_init_object() {
+	var A;
+	try {
+		A = new XMLHttpRequest();
+	} catch (e) {
+		try {
+			A=new ActiveXObject("Msxml2.XMLHTTP");
+		} catch (e) {
+			try {
+				A=new ActiveXObject("Microsoft.XMLHTTP");
+			} catch (oc) {
+				A=null;
+			}
+		}
+	}
+	if (!A)
+		alert("Impossible de créer l’objet XMLHttpRequest.");
+
+	return A;
+}
+if(navigator.geolocation)
+{
+    D = document.createElement("div");
+    D.id = "geo";
+    document.body.insertBefore(D,document.getElementById('contenu'));
+    D.innerHTML = "<a href='#' onclick='return obtenirLoc(document.getElementById(\"r\").checked)' style='font-weight: bold'>Trouver ma localisation</a> <input type='checkbox' name='r' id='r' /> <label for='r'>Actualiser régulièrement</label><span id='slot'></span>";
+} else { alert("Pas de géolocalisation disponible."); }
+</script>
+</body>
+</html>

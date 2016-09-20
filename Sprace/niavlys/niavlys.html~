@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>LD23 - Niavlys</title>
+		<meta charset="utf-8" />
+		<script type='text/javascript' src='http://www.ludumdare.com/compo/wp-content/plugins/countdown-timer/js/fergcorp_countdownTimer_java.js?ver=2.4.2'></script>
+		<script type='text/javascript' src='http://www.ludumdare.com/compo/wp-content/plugins/countdown-timer/js/webtoolkit.sprintf.js?ver=2.4.2'></script>
+		<style type="text/css">
+		    body
+		    {
+		        background-color: #333;
+		        margin: 0;
+		        padding: 0;
+		        font-family: monospace;
+                font-size: 120%;
+		    }
+		    
+		    h1
+		    {
+		        margin-top: 0;
+		        text-align: center;
+		    }
+		    
+		    #container
+		    {
+		        width: 800px;
+		        margin: auto;
+		        padding: 20px;
+		        background-color: black;
+		        color: white;
+		        position: relative;
+		    }
+		    
+		    #blocs
+		    {
+		        position: relative;
+		        height: 100px;
+		    }
+		    
+		    #divTheme
+		    {
+		        position: absolute;
+		        top: 0;
+		        left: 0;
+		        width: 50%;
+		    }
+		    
+		    #divCountdown
+		    {
+		        position: absolute;
+		        top: 0;
+		        right: 0;
+		        width: 50%;
+		        text-align: right;
+		    }
+		    
+		    #blocs div h3
+		    {
+		        margin-bottom: 0;
+		    }
+		    
+		    /*
+		    .fergcorp_countdownTimer_timeUnit
+		    {
+		        white-space: nowrap;
+		    }*/
+		    
+		    #lang
+		    {
+		        position: absolute;
+		        top: 5px;
+		        right: 5px;
+		    }
+		    
+		    .heure
+		    {
+		        font-weight: bold;
+		    }
+		</style>
+	</head>
+	<body>
+		<div id="container">
+		    <span id="lang"><a href="javascript:switchLang();">fr/en</a></span>
+		    <h1>
+		        <span class="en">(Niavlys' homepage for Ludum Dare 23)</span>
+		        <span class="fr">(Page de Niavlys pour le Ludum Dare 23)</span>
+		    </h1>
+    		<div id="blocs">
+        		<div id="divTheme">
+        		    <h3 id="hTheme">
+        		        <span class="fr">Thème</span>
+        		        <span class="en">Theme</span>
+        		    </h3>
+        		    <span class="theme">Tiny World</span>
+        		</div>
+        		<div id="divCountdown">
+        		    <h3 id="hCountdown">Compte à rebours stressant</h3>
+               		Fin de la compétition <span class="fergcorp_countdownTimer_day fergcorp_countdownTimer_timeUnit" id="countdown"></span>
+               	</div>
+           	</div>
+           	<h3>Samedi</h3>
+           	<p><span class="heure">4h40, heure française :</span> Actuellement j’ai uniquement travaillé à construire cette page (oui, j’aime perdre du temps). Le thème m’inspire à moitié, mais j’espère que ça suffira.</p>
+           	<p><span class="heure">12h05 :</span> J’ai eu une idée (vers 5h en fait). Je dévoile pas tant que je suis pas sûr de la garder, mais je travaille sur un prototype depuis quelques heures. <s>Screenshots</s> Prototype bientôt.</p>
+                <p><span class="heure">20h :</span> Voil&agrave; un <a href="snapshot/ld23.html">prototype</a> ! Graphismes &agrave; am&eacute;liorer, je sais.</p>
+    	</div>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    	<script type="text/javascript">
+    	//<!--
+    	    var langEn = true;
+    	    function switchLang()
+    	    {
+    	        if(!langEn) // fr → en
+    	        {
+    	            langEn = true;
+    	            $(".fr").css({display: "none"});
+    	            $(".en").css({display: "inline"});
+    	        }
+    	        else // en → fr
+    	        {
+    	            langEn = false;
+    	            $(".en").css({display: "none"});
+    	            $(".fr").css({display: "inline"});
+    	        }
+    	    }
+    	    switchLang();
+    	//-->
+        </script>
+		<script type="text/javascript">
+        //<!--
+            var getOptions = new Array();
+            getOptions['showYear'] = 0;
+            getOptions['showMonth'] = 0;
+            getOptions['showWeek'] = 0;
+            getOptions['showDay'] = 1;
+            getOptions['showHour'] = 1;
+            getOptions['showMinute'] = 1;
+            getOptions['showSecond'] = 1;
+            getOptions['stripZero'] = 1;
+            var fergcorp_countdownTimer_js_language = new Array();
+            fergcorp_countdownTimer_js_language['year'] = '%d year, ';
+            fergcorp_countdownTimer_js_language['years'] = '%d years, ';
+            fergcorp_countdownTimer_js_language['month'] = '%d month, ';
+            fergcorp_countdownTimer_js_language['months'] = '%d months, ';
+            fergcorp_countdownTimer_js_language['week'] = '%d semaine, ';
+            fergcorp_countdownTimer_js_language['weeks'] = '%d semaines, ';
+            fergcorp_countdownTimer_js_language['day'] = '%d&nbsp;jour, ';
+            fergcorp_countdownTimer_js_language['days'] = '%d&nbsp;jours, ';
+            fergcorp_countdownTimer_js_language['hour'] = '%d&nbsp;heure, ';
+            fergcorp_countdownTimer_js_language['hours'] = '%d&nbsp;heures, ';
+            fergcorp_countdownTimer_js_language['minute'] = '%d&nbsp;minute, ';
+            fergcorp_countdownTimer_js_language['minutes'] = '%d&nbsp;minutes, ';
+            fergcorp_countdownTimer_js_language['second'] = '%d&nbsp;seconde, ';
+            fergcorp_countdownTimer_js_language['seconds'] = '%d&nbsp;secondes, ';
+            fergcorp_countdownTimer_js_language['ago'] = 'il y a %s';
+            fergcorp_countdownTimer_js_language['in'] = 'dans %s';
+            var fergcorp_countdownTimer_js_events = new Array();
+            fergcorp_countdownTimer_js_events[0] = new Array()
+            fergcorp_countdownTimer_js_events[0]['id'] 		= "countdown";
+            fergcorp_countdownTimer_js_events[0]['targetDate'] 	= "1335142800";
+            fergcorp_countdownTimer_js();
+        //-->
+        </script>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+function Spz()
+{
+	this.v = 0.42;
+	this.vX = 0;
+	this.vY = 0;
+	this.vMax = 0.80;
+	this.x = 0;
+	this.y = 0;
+	this.accel = 0.075;
+	this.decel = 0.065;
+}
+
+var sp = new Spz();
+
+//////////////////////////////////////
+
+var testV = 0; // réel   [-1, 1]
+testX = 50;    // entier [-∞, +∞]
+
+function testAccel(d)
+{
+	var moved = false;
+	var dir = 0;
+	testX = testX + testV;
+	
+	if((37 in keysDown || 81 in keysDown || 65 in keysDown) && sp.x >= 50) // gauche
+	{
+		$("#accel").css({background: "#CCC"});
+		dir = -1;
+		if(testV>-1)
+			testV -= 0.10;
+		
+		moved = true;
+	}
+	if((39 in keysDown || 68 in keysDown) && sp.x <= w-50) // droite
+	{
+		$("#accel").css({background: "#CCC"});
+		dir = +1;
+		if(testV<1)
+			testV += 0.10;
+		moved = true;
+	}
+	
+	if(!moved)
+	{
+		$("#accel").css({background: "none"});
+		if(testV<0)
+			testV += 0.10;
+		else if(testV>0)
+			testV -= 0.10;
+	}
+	
+	testX = Math.round(testX);
+	testV = Math.round(testV*100)/100;
+	
+	$("#accel").html("x = "+testX+"<br />"+"v = "+testV);
+}
