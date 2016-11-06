@@ -126,8 +126,7 @@ p.main
     color: white;
     list-style: none;
     float: left;
-    background-color:#333;
-    height: 3.5em;
+    background-color: #333;
     border-left: 1px solid #333;
     border-right: 1px solid #333;
 }
@@ -136,7 +135,7 @@ p.main
 {
     font-weight: bold;
     float: left;
-    font-size: 1.1em;
+    font-size: 1em;
     color: inherit;
     padding: 1em;
 }
@@ -168,13 +167,13 @@ p.main
 {
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 #div_menu
 {
     background-color:#333;
-    /* height: 3.7em;            (2×1,3)+1,1≠3,7 ?    */
-    height: 3.5em;
 }
 
 #date
